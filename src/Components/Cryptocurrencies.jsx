@@ -5,21 +5,24 @@ import { Card, Row, Col, Input } from 'antd';
 
 import { useGetCryptosQuery } from '../services/cryptoApi';
 
-const Cryptocurrencies = () => {
+const Cryptocurrencies = ({simplified}) => {
 
-  const { data: cryptosList, isFetching } = useGetCryptosQuery();
+  const count = simplified ? 10 : 100;
+  const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState(cryptosList?.data?.coins);
 
   console.log(cryptosList)
 
+  if (isFetching) return 'Loading... ';
+
   return (
     <>
-    <Row gutters={[32, 32]} className="crypto-card-container">
-      {cryptos.map((currency) => (
+    <Row gutter={[32, 32]} className="crypto-card-container">
+      {cryptos?.map((currency) => (
         <Col xs={24} sm={12} lg={6} className="crypto-card" key={currency.id}>
           <Link to={`/crypto/${currency.id}`}>
             <Card title={`${currency.rank}. ${currency.name}`}
-            extra={<img className="crypto-image" src={currency.iconUrl} />}
+            extra={<img alt="" className="crypto-image" src={currency.iconUrl} />}
             hoverable
             >
               <p>Price: {millify(currency.price)}</p>
