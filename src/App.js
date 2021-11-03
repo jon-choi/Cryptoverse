@@ -33,9 +33,9 @@ const App = () => {
               </Route>
               <Route exact path="/crypto/:coinId">
                 <CryptoDetails />
-                <Route exact path="/news">
-                  <News />
-                </Route>
+              </Route>
+              <Route exact path="/news">
+                <News />
               </Route>
             </Switch>
           </div>
@@ -52,7 +52,7 @@ const App = () => {
           <Space>
             <Link to="/">Home</Link>
             <Link to="/exchanges">Exchanges</Link>
-            <Link to="news">News</Link>
+            <Link to="/news">News</Link>
           </Space>
         </div>
       </div>
