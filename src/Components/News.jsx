@@ -23,7 +23,7 @@ const News = ({ simplified}) => {
         <Col span={24}>
           <Select 
             showSearch
-            classNAme="select-news"
+            className="select-news"
             placeholder="Select a Currency"
             optionFilterProp="children"
             onChange={(value) => setNewsCategory(value)}
