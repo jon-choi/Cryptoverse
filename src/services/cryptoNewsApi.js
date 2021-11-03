@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/react";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const cryptoNewsHeaders = {
   "x-bingapis-sdk": "true",
@@ -22,3 +22,5 @@ export const cryptoNewsApi = createApi({
     }),
   }),
 });
+
+export const { useGetCryptoNewsQuery } = cryptoNewsApi;
