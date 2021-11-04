@@ -5,7 +5,7 @@ A web application that has everything crypto! See current news, market caps, sta
 ## Netlify Link
 
 This project is deployed on Netlify! No need to install or run anything on your own computer. Just click the following link and you're there!
-[Cryptoverse][https://everythingcryptoapp.netlify.app]
+![Cryptoverse](https://everythingcryptoapp.netlify.app)
 
 ## Dependencies
 
