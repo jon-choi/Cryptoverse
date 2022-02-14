@@ -13,6 +13,8 @@ const Exchanges = () => {
   const { data, isFetching } = useGetExchangesQuery();
   const exchangesList = data?.data?.exchanges;
 
+
+  // Need premium plan to access this endpoint
   if (isFetching) return <Loader />;
 
   return (
@@ -24,7 +26,7 @@ const Exchanges = () => {
         <Col span={6}><b>Change</b></Col>
       </Row>
       <Row>
-        {exchangesList.map((exchange) => (
+        {/* {exchangesList.map((exchange) => (
           <Col span={24}>
             <Collapse>
               <Panel
@@ -47,7 +49,7 @@ const Exchanges = () => {
               </Panel>
             </Collapse>
           </Col>
-        ))}
+        ))} */}
       </Row>
     </>
   );
